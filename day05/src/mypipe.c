@@ -20,6 +20,7 @@ int main(int argc,char * argv[])
 	if(pid > 0)
 	{
 		close(fd[0]);
+		sleep(3);
 		write(fd[1],str,strlen(str));
 		close(fd[1]);
 	}
