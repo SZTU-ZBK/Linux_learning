@@ -30,7 +30,7 @@ int main(int argc,char *argv[])
 	{
 		close(fd[1]);
 		dup2(fd[0],STDIN_FILENO);
-		execlp("wc","wc","-l",NULL);
+		execlp("wc","wc","-l",NULL);//这里相当于不断read，只有read到EOF才会退出 
 		sys_error("execlp wc -l error!");
 	}
 	else if(i == 2)
