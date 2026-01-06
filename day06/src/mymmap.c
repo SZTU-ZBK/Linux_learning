@@ -16,7 +16,7 @@ int main(int argc,char *argv[])
 	int *p;
 	pid_t pid;
 	fd = open("testmmap",O_RDWR|O_CREAT,0644);
-	if(fd == -1) sys_error("mmap error!");
+	if(fd == -1) sys_error("open error!");
 	ftruncate(fd,1024);
 	p = (int *)mmap(NULL,1024,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
 	if(p == MAP_FAILED)
