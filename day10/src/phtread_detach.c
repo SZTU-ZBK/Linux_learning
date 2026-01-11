@@ -22,6 +22,10 @@ int main(int argc,char *argv[])
 	if(ret == -1)printf("pthread_detach error%s\n",strerror(ret));
 	sleep(3);
 	ret = pthread_join(thread_num_1,NULL);
-	if(ret != 0)printf("pthread_join error%s\n",strerror(ret));
+	if(ret != 0)
+	{
+		fprintf(stderr, "pthread_join error: %s\n", strerror(ret));
+		printf("pthread_join error%s\n",strerror(ret));
+	}
 	return 0;
 }
