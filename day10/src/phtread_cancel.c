@@ -30,6 +30,6 @@ int main(int argc,char *argv[])
 	sleep(3);
 	pthread_cancel(thread_num_1);//只有到达取消点（内核态）才能杀死线程，否则杀不死
 	pthread_join(thread_num_1,&tret);
-	printf("thread exit code is %d\n",(int ) tret);
+	printf("thread exit code is %d\n",(int ) tret);//被pthread_cancel杀死的线程，返回值为-1
 	return 0;
 }
